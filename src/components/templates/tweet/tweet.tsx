@@ -47,11 +47,13 @@ export default function Tweet() {
   };
 
   const processTweet = (inputTweet: string) => {
-    const hashTag = isHashTagrequired(inputTweet) ? createLangHashTag(inputTweet) : ""; 
-    const { tweet, trimmedUrlTweetLen } = trimUrlAsTwitterSupport(inputTweet + hashTag );
-    dispatch(
-      setTweetOutput({ value: trimTweet(tweet, trimmedUrlTweetLen) })
+    const hashTag = isHashTagrequired(inputTweet)
+      ? createLangHashTag(inputTweet)
+      : "";
+    const { tweet, trimmedUrlTweetLen } = trimUrlAsTwitterSupport(
+      inputTweet + hashTag
     );
+    dispatch(setTweetOutput({ value: trimTweet(tweet, trimmedUrlTweetLen) }));
   };
 
   return (
@@ -60,22 +62,12 @@ export default function Tweet() {
         <InputTweet textLength={maxInputLength} />
         <OutputTweet
           tweet={inputTweet.typing ? "User is typing..." : outputTweet.value}
-          disable={inputTweet.length < 1 ? true : false}
+          disable={inputTweet.length < 5 ? true : false}
           readOnly={true}
         />
         <Divider />
       </div>
       <div className="button-chip-base">
-        <LoadingButton
-          onClick={tweetify}
-          endIcon={<SendIcon />}
-          loading={loading}
-          loadingPosition="end"
-          variant="contained"
-          disabled={inputTweet.value.length < 1 ? true : false}
-        >
-          Tweetify
-        </LoadingButton>
         {inputTweet.typing ? (
           <Chip
             avatar={<Avatar src={user?.picture} alt={user?.name}></Avatar>}
@@ -84,7 +76,18 @@ export default function Tweet() {
             variant="outlined"
             className="chip-customise"
           />
-        ) : null}
+        ) : (
+          <LoadingButton
+            onClick={tweetify}
+            endIcon={<SendIcon />}
+            loading={loading}
+            loadingPosition="end"
+            variant="contained"
+            disabled={inputTweet.value.length < 5 ? true : false}
+          >
+            Tweetify
+          </LoadingButton>
+        )}
       </div>
       <PositionedSnackbar
         text={snackTxt}

@@ -17,9 +17,8 @@ export default function TextArea({
   text,
   callback,
   disable = false,
-  readOnly= false,
-  textLength = maxTweetLength 
-
+  readOnly = false,
+  textLength = maxTweetLength
 }: textAreaProps) {
   return (
     <TextareaAutosize
