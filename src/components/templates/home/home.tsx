@@ -1,10 +1,23 @@
 import * as React from "react";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import "./home.scss";
 
-export default function Home() {
+const Home = () => {
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
   return (
-    <React.Fragment>
-      <h1 className="home">Home!!</h1>
-    </React.Fragment>
+    isAuthenticated && (
+      <div>
+        <img src={user?.picture} alt={user?.name} />
+        <h2>{user?.name}</h2>
+        <p>{user?.email}</p>
+      </div>
+    )
   );
-}
+};
+
+export default Home;
