@@ -4,7 +4,8 @@
   "description": "Tomato tweet machine for a marketing and lobbying group.",
   "main": "index.html",
   "scripts": {
-    "start": "parcel src/index.html --open --no-source-maps",
+    "start-local": "parcel src/index.html --open --no-source-maps",
+    "start":"serve",
     "build": "parcel build src/index.html --no-source-maps",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
