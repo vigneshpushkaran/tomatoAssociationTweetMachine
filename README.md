@@ -1,7 +1,7 @@
 # Tomato tweet machine
 ## Getting Started
 
-Please visit `APPROACH.md`, for design approach.
+Please visit [APPROACH.md](APPROACH.md), for design approach.
 #### Note
 
 As `Auth0` has been added to the project for security, the app in the code sandbox is not bootstrapping; we are working on alternate choices and deployment; please setup locally for review at the present; I apologise for the inconvenience.
@@ -24,7 +24,7 @@ user: testhotmail.com password: test@123
 ```
 ## Deployment
 
-[Demo] - (https://ey-digital-detox-demo.herokuapp.com/)
+[Demo](https://ey-digital-detox-demo.herokuapp.com/)
 
 `Deployment in progress`
 
