@@ -1,4 +1,32 @@
 # Tomato tweet machine
+## Getting Started
+
+Please visit `APPROACH.md`, for design approach.
+#### Note
+
+As `Auth0` has been added to the project for security, the app in the code sandbox is not bootstrapping; we are working on alternate choices and deployment; please setup locally for review at the present; I apologise for the inconvenience.
+
+### Installation
+#### Local:
+
+Install npm package
+From root directory -> run `npm install`
+#### Run
+`npm start-local` Runs the app in the development mode.\
+
+Open [http://localhost:1234](http://localhost:1234) to view it in the browser.
+
+#### Login Credentials
+
+Use below credential to access app, as its secure with Auth0 integration
+```
+user: testhotmail.com password: test@123
+```
+## Deployment
+
+[Demo] - (https://ey-digital-detox-demo.herokuapp.com/)
+
+`Deployment in progress`
 
 ## Scenario & requirements
 
