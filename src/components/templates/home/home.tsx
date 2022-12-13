@@ -1,23 +1,23 @@
 import * as React from "react";
-import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import "./home.scss";
+import CircularProgress from "@mui/material/CircularProgress";
+import Typography from "../../ui/atoms/typography/typography";
 
-const Home = () => {
+export default function Home() {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <CircularProgress />;
   }
 
   return (
-    isAuthenticated && (
-      <div>
+    isAuthenticated ? (
+      <>
         <img src={user?.picture} alt={user?.name} />
-        <h2>{user?.name}</h2>
-        <p>{user?.email}</p>
-      </div>
-    )
+        <Typography variant="h6">Welcome to Demo, {user?.name}</Typography>
+        <Typography>{user?.email}</Typography>
+      </>
+    ) : <></>
   );
-};
-
-export default Home;
+}

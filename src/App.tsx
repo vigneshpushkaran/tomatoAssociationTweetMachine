@@ -14,8 +14,14 @@ function App() {
         <Header title={process.env.HOME_PAGE_TITLE}></Header>
         <div className="base">
           <Routes>
-            <Route path="/" element= {<ProtectedRoute component={HomeContainer}/>}/>
-            <Route path="/tweet" element={<TweetContainer />} />
+            <Route
+              path="/"
+              element={<ProtectedRoute component={HomeContainer} />}
+            />
+            <Route
+              path="/tweet"
+              element={<ProtectedRoute component={TweetContainer} />}
+            />
           </Routes>
         </div>
       </Router>
