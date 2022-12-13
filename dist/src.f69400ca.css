@@ -1,0 +1,48 @@
+.text-area-customise {
+  outline: none;
+  border: none;
+  resize: none;
+}
+.input-tweet {
+  display: block;
+}
+.output-tweet {
+  display: block;
+}
+.button-chip-base {
+  width: 50vw;
+  margin: 20px auto;
+}
+
+.tweet-box {
+  color: #1976d2;
+}
+
+.chip-customise {
+  margin-top: 4px;
+  margin-left: 16px;
+}
+.home {
+  color: #1976d2;
+}
+.base {
+  margin: 100px auto 0px auto;
+  width: 50vw;
+}
+
+.output-tweet, .input-tweet {
+  min-height: 50px;
+  height: auto;
+  border: 1px solid #e0e0e0;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.0509803922);
+  background: #ffffff;
+  border-radius: 12px;
+}
+
+body {
+  background-color: rgba(242, 242, 242, 0.3607843137);
+}
+
+/*# sourceMappingURL=/src.f69400ca.css.map */
