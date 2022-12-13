@@ -62,7 +62,7 @@ twitter url 23 char - [reference](https://help.twitter.com/en/using-twitter/how-
 Extensive review, we decided that the third-party library "franc" was the top pick for our needs.
 We have already added the relevant hashtag by identifying the lang as part of requirement 5.
 
-## work inprogress
+## Work inprogress
 - unit test 
 - heroku/(netlify correct) deployment (Optional)
 
@@ -73,3 +73,5 @@ We have already added the relevant hashtag by identifying the lang as part of re
 - Post tweet to Twitter from the app
 - copy the output tweet by clicking the copy icon(clipboard)
 - A fallback URL in case of an error
+
+
