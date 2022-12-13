@@ -21,9 +21,12 @@ import Avatar from "../../ui/atoms/avatar/avatar";
 import PositionedSnackbar from "../../ui/molecules/snackBar/snackBar";
 import "./tweet.scss";
 import { maxInputLength } from "../../../config";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Tweet() {
   const dispatch = useDispatch();
+  const { user } = useAuth0();
+
   const outputTweet = useSelector((state: any) => state.outputTweet);
   const inputTweet = useSelector((state: any) => state.inputTweet);
   const debouncedValue = useDebounce(inputTweet.value, 500);
@@ -75,8 +78,8 @@ export default function Tweet() {
         </LoadingButton>
         {inputTweet.typing ? (
           <Chip
-            avatar={<Avatar>VP</Avatar>}
-            label="User is typing"
+            avatar={<Avatar src={user?.picture} alt={user?.name}></Avatar>}
+            label="typing"
             color="primary"
             variant="outlined"
             className="chip-customise"
