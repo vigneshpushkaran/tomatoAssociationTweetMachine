@@ -20,6 +20,6 @@ module.exports = {
         "/node_modules/(?!trigram-utils)"
     ],
     "transform": {
-        "^.+\\.(ts|tsx)?$": ["ts-jest"]
+        "^.+\\.(ts|tsx)?$": ["ts-jest", "babel-jest"],
     }
 }
