@@ -9,8 +9,8 @@ const root = createRoot(container!);
 
 root.render(
   <Auth0Provider
-    domain={process.env.DOMAIN as string}
-    clientId={process.env.CLIENTID as string}
+    domain="dev-ccl69nx0.auth0.com"
+    clientId="cAItSQllt3xEq5Y6zQJMH7C7AgFswOue"
     redirectUri={window.location.origin}
   >
     <Provider store={store}>
