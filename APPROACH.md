@@ -64,7 +64,6 @@ We have already added the relevant hashtag by identifying the lang as part of re
 
 ## Work inprogress
 - unit test 
-- heroku/(netlify correct) deployment (Optional)
 
 ## Improvements needed further
 
