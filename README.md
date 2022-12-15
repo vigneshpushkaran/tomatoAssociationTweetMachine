@@ -24,9 +24,9 @@ user: testhotmail.com password: test@123
 ```
 ## Deployment
 
-[Demo](https://ey-digital-detox-demo.herokuapp.com/)
+[Demo](https://csb-1dvom1.netlify.app/)
 
-`Deployment in progress`
+`Deployed  to netlify`
 
 ## Scenario & requirements
 
