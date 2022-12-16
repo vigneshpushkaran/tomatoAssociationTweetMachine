@@ -37,11 +37,27 @@ describe("Is hashtag required test", () => {
 });
 
 describe("trimUrlAsTwitterSupport test", () => {
-    test("Tweet with url not trims urland tweet length", () => {
+    test("Tweet with url not trims url and tweet length", () => {
         const text = `Hello world, welcome to Uk, please visit site to check nutrition facts https://www.britishtomatoes.co.uk/tomato-nutrition 
             #Tomato thanks for supporting tomato association.`;
         const { trimmedUrlTweetLen, tweet } = trimUrlAsTwitterSupport(text);
         expect(tweet).toBe(text);
+        expect(trimmedUrlTweetLen).toBe(167);
+    });
+
+    test("Tweet with url trims url and tweet length", () => {
+        const text = `Hello world, welcome to Uk, please visit site to check nutrition facts #Tomato thanks for supporting tomato association. The site is placed at the end to check the url to be trimmed https://www.britishtomatoes.co.uk/tomato-nutrition`;
+        const { trimmedUrlTweetLen, tweet } = trimUrlAsTwitterSupport(text);
+        const expectedText = `Hello world, welcome to Uk, please visit site to check nutrition facts #Tomato thanks for supporting tomato association. The site is placed at the end to check the url to be trimmed https://www.b`;
+        expect(tweet).toBe(expectedText);
+        expect(trimmedUrlTweetLen).toBe(140);
+    });
+
+    test("Tweet with url trims 1st url and 2nd url would not trim", () => {
+        const text = `Hello world, welcome to Uk, please visit site https://www.britishtomatoes.co.uk/tomato-nutrition to check nutrition facts #Tomato thanks for supporting tomato association. The site is placed at the end to check the url to be trimmed https://www.britishtomatoes.co.uk/tomato-nutrition`;
+        const { trimmedUrlTweetLen, tweet } = trimUrlAsTwitterSupport(text);
+        const expectedText = `Hello world, welcome to Uk, please visit site https://www.britishtomatoes.co.uk/tomato-nutrition to check nutrition facts #Tomato thanks for supporting tomato association. The site is placed at the end to check the url to be trimmed https://www.b`;
+        expect(tweet).toBe(expectedText);
         expect(trimmedUrlTweetLen).toBe(167);
     });
 });
