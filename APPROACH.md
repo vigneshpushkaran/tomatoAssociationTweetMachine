@@ -10,7 +10,7 @@ Considered the following items in the process,
 3. Application state management and Security pratice
     Redux configuration to manage state, adding auth0 to secure app
 4. Bundling tool
-    Parcel byndler used to leverage zero configuration to developer to focs on business logic and components
+    Parcel bundler used to leverage zero configuration to developer to focs on business logic and components
 
 1. It should not be possible to type in the output text box.
 
@@ -61,10 +61,6 @@ twitter url 23 char - [reference](https://help.twitter.com/en/using-twitter/how-
 
 Extensive review, we decided that the third-party library "franc" was the top pick for our needs.
 We have already added the relevant hashtag by identifying the lang as part of requirement 5.
-
-## Work inprogress
-- unit test 
-
 ## Improvements needed further
 
 - Tweet replica preview
